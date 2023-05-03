@@ -220,7 +220,8 @@ if __name__ == "__main__":
 			# Faça algo com os valores X e Z (por exemplo, imprimir os valores)
 			# print(f"X: {x}, Z: {z}")
 
-			matches = find_matching_track(old_x[0], old_z[1], position_x, position_z, minimum_x, minimum_z, maximum_x, maximum_z, track_bounds)
+	
+			matches = find_matching_track(old_x, old_z, position_x, position_z, minimum_x, minimum_z, maximum_x, maximum_z, track_bounds)
 			if matches:
 				if len(matches) == 1:
 					if matches[0][0] > 0.96:
@@ -230,7 +231,3 @@ if __name__ == "__main__":
 						print(f"Got a possible match: {matches[0][1]} ({round(matches[0][0] * 100, 1)}%)")
 				else:
 					print(f"Got {len(matches)} track matches")
-
-			old_xz = [position_x, position_z]
-			#print(f"Trying {x} - {z} ", x, z)
-		print(f"Ending {old_xz[0]} / {old_xz[1]}")
